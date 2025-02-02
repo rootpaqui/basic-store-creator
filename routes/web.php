@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\StoreController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StoreController;
+use Illuminate\Support\Facades\Route;
 
 Route::domain('{store_name}.'.config('app.short_url'))->group(function () {
     Route::get('/', [StoreController::class, 'index'])->name('store.website');
