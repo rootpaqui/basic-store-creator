@@ -2,11 +2,20 @@
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
-        <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+        <div class="flex gap-4">
+            <!-- Name -->
+            <div class="w-full">
+                <x-input-label for="name" :value="__('Name')" />
+                <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                <x-input-error :messages="$errors->get('name')" class="mt-2" />
+            </div>
+
+            <!-- Age -->
+            <div class="w-1/3">
+                <x-input-label for="age" :value="__('Age')" />
+                <x-text-input id="age" class="block mt-1 w-full" type="number" min="18" max="99" name="age" :value="old('age')" required autofocus autocomplete="age" />
+                <x-input-error :messages="$errors->get('age')" class="mt-2" />
+            </div>
         </div>
 
         <!-- Email Address -->
