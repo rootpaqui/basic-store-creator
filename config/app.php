@@ -54,6 +54,8 @@ return [
 
     'url' => env('APP_URL', 'http://localhost'),
 
+    'short_url' => Illuminate\Support\Str::after(rtrim(env('APP_URL', 'http://localhost'), '/'), '://'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
